@@ -12,6 +12,10 @@ input{
     border: 1px slid #999;
 }
 
+input:invalid[focused="true"]{
+    border: 1px solid red;
+}
+
 label{
     font-size: 14px;
     color: #444;
@@ -22,4 +26,13 @@ span {
     padding: 3px;
     color: red;
     display: none;
+}
+/*
+input:invalid ~ input {
+    display: block;
+}
+*/
+
+input:invalid[focused="true"] ~ span{
+    display: block;
 }

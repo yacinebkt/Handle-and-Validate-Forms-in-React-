@@ -14,7 +14,7 @@ function App() {
     lastName: "",
     email: "",
     birthday: "",
-    password: "",
+    password: '',
     confirmPassword: "",
   });
 
@@ -29,6 +29,9 @@ function App() {
   };
 
   console.log(registerValues)
+
+//  const passwordCondition = `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`
+  const passwordCondition = `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`
 
 
   return (
@@ -45,7 +48,9 @@ function App() {
           label="Frst Name"
           value={registerValues.firstName}
           onChange={onChangeRegisterValues}
-          errorMessage = "First name should be 4-17 characters and shouldn't include any special character. "
+          required ={true}
+          pattern = '^[A-Za-z0-9]{3,19}$'
+          errorMessage = "First name should be 3-19 characters and shouldn't include any special character. "
         />
         <Input
           placeholder="LastName"
@@ -54,14 +59,17 @@ function App() {
           label="Last Name"
           value={registerValues.lastName}
           onChange={onChangeRegisterValues}
-          errorMessage = "Last name should be 4-17 characters and shouldn't include any special character. "
+          required ={true}
+          pattern = '^[A-Za-z0-9]{3,19}$'
+          errorMessage = "Last name should be 3-19 characters and shouldn't include any special character. "
 
         />
         <Input
           placeholder="Email"
           name="email"
-          type="text"
+          type="email"
           label="Email"
+          required ={true}
           value={registerValues.email}
           onChange={onChangeRegisterValues}
           errorMessage = "It should be a valid Email address !"
@@ -72,6 +80,8 @@ function App() {
           name="birthday"
           type="date"
           label="Birthday"
+          required ={false}
+
           value={registerValues.data}
           onChange={onChangeRegisterValues}
         />
@@ -80,8 +90,10 @@ function App() {
           name="password"
           type="password"
           label="Password"
+          required ={true}
           value={registerValues.password}
           onChange={onChangeRegisterValues}
+          pattern={`^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`}
           errorMessage = "password should be 9-22 characters and include at least 1 letter, 1 number, 1 special character."
 
         />
@@ -92,6 +104,8 @@ function App() {
           label="Confirm Password"
           value={registerValues.confirmPassword}
           onChange={onChangeRegisterValues}
+          required ={true}
+          pattern={registerValues.password}
           errorMessage = "Passwords don't match"
 
         />
