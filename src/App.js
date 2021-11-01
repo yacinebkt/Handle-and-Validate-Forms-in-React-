@@ -33,7 +33,11 @@ function App() {
 
   return (
     <div className="App">
+
       <form onSubmit={handleSubmit}>
+        <h1>
+          Register
+        </h1>
         <Input
           placeholder="FirstName"
           name="firstName"
@@ -41,6 +45,7 @@ function App() {
           label="Frst Name"
           value={registerValues.firstName}
           onChange={onChangeRegisterValues}
+          errorMessage = "First name should be 4-17 characters and shouldn't include any special character. "
         />
         <Input
           placeholder="LastName"
@@ -49,6 +54,8 @@ function App() {
           label="Last Name"
           value={registerValues.lastName}
           onChange={onChangeRegisterValues}
+          errorMessage = "Last name should be 4-17 characters and shouldn't include any special character. "
+
         />
         <Input
           placeholder="Email"
@@ -57,6 +64,8 @@ function App() {
           label="Email"
           value={registerValues.email}
           onChange={onChangeRegisterValues}
+          errorMessage = "It should be a valid Email address !"
+
         />
         <Input
           placeholder="birthday"
@@ -73,6 +82,8 @@ function App() {
           label="Password"
           value={registerValues.password}
           onChange={onChangeRegisterValues}
+          errorMessage = "password should be 9-22 characters and include at least 1 letter, 1 number, 1 special character."
+
         />
         <Input
           placeholder="confirm Password"
@@ -81,6 +92,8 @@ function App() {
           label="Confirm Password"
           value={registerValues.confirmPassword}
           onChange={onChangeRegisterValues}
+          errorMessage = "Passwords don't match"
+
         />
         <button> Sumbit</button>
       </form>

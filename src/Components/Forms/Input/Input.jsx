@@ -11,8 +11,10 @@ export default function Input(props) {
         type = {props.type}
         value={props.value}
         onChange={props.onChange}
-      
       />
+      <span>
+          {props.errorMessage}
+      </span>
       
     </div>
   );

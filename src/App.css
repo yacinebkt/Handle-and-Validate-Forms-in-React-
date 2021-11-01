@@ -3,13 +3,43 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
-
   align-items: center;
+  background: linear-gradient(rgba(255, 255, 255, .6), rgba(255, 255, 255, .4)), 
+              url(./Uploads/SignUpCover.png);
+              
+  background-size: cover;
+  background-position : center;
+
 }
 
-.App-logo {
+form {
+  background: #FFF;
+  padding: 0 60px;
+  border-radius: 10px;
+}
+
+.logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+h1{
+  color: palevioletred;
+  text-align: center;
+
+}
+button{
+  width: 90%;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  background: palevioletred;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 15px 0 35px 0;
 }
 
 .App-header {
